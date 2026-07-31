@@ -420,6 +420,44 @@
 
     <!-- JS for Preloader, Scroll Animations, and Music -->
     <script>
-        // --- Preloader Logic ---
-        window.addEventListener('load', function() {
-            const preloader = document
+        // --- Bulletproof Preloader Logic ---
+        function removeLoader() {
+            const preloader = document.getElementById('preloader');
+            if (preloader && preloader.style.display !== 'none') {
+                preloader.style.opacity = '0';
+                setTimeout(() => { preloader.style.display = 'none'; }, 1000);
+            }
+        }
+        
+        // Hide loader when page is ready, or FORCE hide it after 2.5 seconds 
+        window.addEventListener('load', removeLoader);
+        setTimeout(removeLoader, 2500);
+
+        // --- Music Player Logic ---
+        const audio = document.getElementById("myAudio");
+        const btn = document.getElementById("musicBtn");
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                btn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                audio.pause();
+                btn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        }
+
+        // --- Advanced Intersection Observer for Scroll Animations ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1 
+        });
+
+        const hiddenElements = document.querySelectorAll('.scroll-animate');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
