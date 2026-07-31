@@ -3,232 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy International Girlfriend Day, Mishti! ❤️</title>
+    <title>For My Buggu - Happy Girlfriend Day ❤️</title>
+    <!-- Importing Beautiful Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-bg: #E6E6FA; /* Lavender */
-            --secondary-bg: #FFFFFF; /* White */
-            --text-main: #4A4A4A;
-            --accent-color: #5D3FD3; /* Deep Lavender */
-            --heart-red: #ff4d6d;
+            --lavender: #E6E6FA;
+            --dark-lavender: #9b72cf;
+            --white: #FFFFFF;
+            --text-dark: #333333;
+            --glass-bg: rgba(255, 255, 255, 0.7);
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-main);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            background-attachment: fixed;
+            color: var(--text-dark);
+            overflow-x: hidden;
         }
 
-        nav {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        /* Animated Background Gradient */
+        .bg-animation {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: linear-gradient(45deg, var(--lavender), #ffffff, #f0e6ff, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -1;
         }
 
-        .nav-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-brand {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--accent-color);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--heart-red);
-        }
-
-        section {
-            padding: 4rem 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero {
-            text-align: center;
-            background-color: var(--secondary-bg);
-            border-radius: 20px;
-            padding: 5rem 2rem;
-            margin-top: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         h1, h2, h3 {
-            color: var(--accent-color);
+            font-family: 'Dancing Script', cursive;
+            color: var(--dark-lavender);
         }
 
-        .timeline-card, .about-card {
-            background: var(--secondary-bg);
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            border-left: 5px solid var(--accent-color);
+        /* Glassmorphism Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 15px 0;
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            margin: 0; padding: 0;
         }
 
-        .about-card {
-            border-left: none;
-            border-top: 5px solid var(--accent-color);
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-lavender);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff4d6d;
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 100px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
         }
 
-        .icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: float 3s ease-in-out infinite;
         }
 
-        .message-box {
-            background: #fff0f3;
-            border-left: 5px solid var(--heart-red);
-            padding: 2.5rem;
-            border-radius: 0 15px 15px 0;
-            font-style: italic;
-            font-size: 1.1rem;
-            margin: 2rem 0;
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            line-height: 1.8;
+            background: var(--glass-bg);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+            backdrop-filter: blur(8px);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Glass Cards for Memories & About */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(155, 114, 207, 0.2);
+        }
+
+        .glass-card h3 {
+            font-size: 2.2rem;
+            margin-top: 0;
+        }
+
+        /* Photo Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            aspect-ratio: 1/1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: -50px;
+            left: 0; width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--dark-lavender);
+            transition: bottom 0.3s;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            bottom: 0;
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--dark-lavender);
+            color: white;
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(155, 114, 207, 0.5);
+            z-index: 1000;
+            transition: 0.3s;
+            border: none;
+            outline: none;
+        }
+
+        .music-player:hover {
+            transform: scale(1.1);
+            background: #ff4d6d;
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
-            background-color: var(--secondary-bg);
-            margin-top: 4rem;
-            color: var(--text-main);
+            padding: 30px;
+            color: var(--dark-lavender);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(5px);
         }
     </style>
 </head>
 <body>
 
+    <div class="bg-animation"></div>
+
+    <!-- Background Music (Replace the source with your music file path) -->
+    <audio id="bgMusic" loop>
+        <source src="music/laila.mpeg" type="audio/mpeg">
+    </audio>
+
+    <button class="music-player" id="musicBtn" onclick="toggleMusic()">
+        <i class="fas fa-play"></i>
+    </button>
+
     <nav>
-        <div class="nav-container">
-            <div class="nav-brand">💖 Mishti & Veer</div>
-            <ul>
-                <li><a href="#welcome">Home</a></li>
-                <li><a href="#memories">Our Memories</a></li>
-                <li><a href="#about">About Her</a></li>
-                <li><a href="#letter">My Letter</a></li>
-            </ul>
-        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#memories">Memories</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#letter">My Letter</a></li>
+        </ul>
     </nav>
 
-    <section id="welcome" class="hero">
-        <div>
-            <div class="icon">❤️ 💜 🤍 💖 💝</div>
-            <h1>Happy International Girlfriend Day, Mishti! ❤️</h1>
-            <p>August 1st - Celebrating the queen of my heart</p>
-            <p>
-                To the girl who is 1 in a trillion. Every moment with you is a blessing, and I'm the luckiest person alive to have you in my life.
-            </p>
-        </div>
+    <section id="home" class="hero">
+        <h1>Happy International<br>Girlfriend Day, Mishti! ❤️</h1>
+        <p>To the girl who is 1 in a trillion. Every moment with you is a blessing, and I am the luckiest person alive to have you in my life.</p>
     </section>
 
     <section id="memories">
-        <h2>Our Beautiful Journey</h2>
+        <h2 style="font-size: 3rem; text-align: center;">Our Beautiful Journey</h2>
         
-        <div class="timeline-card">
-            <h3>Our First Meeting</h3>
+        <div class="glass-card reveal">
+            <h3>💘 Our First Meeting</h3>
             <p><strong>February 14 - Valentine's Day</strong></p>
-            <p>
-                The day my life changed forever. When I first saw you in that stunning black saree, I couldn't stop staring. You were looking so fabulous and beautiful; mera bas yahi mann kar raha tha ki main aapko dekhta hi rahun 🫠🤌🏻💗.
-            </p>
+            <p>The day my life changed forever. When I first saw you in that stunning black saree, I couldn't stop staring. You were looking so fabulous and beautiful; mera bas yahi mann kar raha tha ki main aapko dekhta hi rahun 🫠🤌🏻💗.</p>
         </div>
 
-        <div class="timeline-card">
+        <div class="glass-card reveal">
             <h3>🍝 The Pasta Picnic</h3>
-            <p><strong>5th Meet - A Moment of Pure Love</strong></p>
-            <p>
-                My lovely bby cooked red sauce pasta and fed me with her cute little hands 🤭❤️. It tasted just amazing. The effort you put into our relationship means the world to me. No one can ever match your cooking, buggu! Waiting for more dishes you will cook and feed me 🙈🤭😘❤️.
-            </p>
+            <p><strong>Our 5th Meet - A Moment of Pure Love</strong></p>
+            <p>My lovely bby cooked red sauce pasta and fed me with her cute little hands 🤭❤️. It tasted just amazing. The effort you put into our relationship means the world to me. No one can ever match your cooking, buggu! Waiting for more dishes you will cook and feed me 🙈🤭😘❤️.</p>
         </div>
 
-        <div class="timeline-card">
-            <h3>💗 The Cuddling Moment</h3>
+        <div class="glass-card reveal">
+            <h3>🫂 The Cuddling Moment</h3>
             <p><strong>April 14 - Pure Bliss</strong></p>
-            <p>
-                We cuddled so much... hum dono ek dusre ki baahon mein the 🫠🫶🏻💗. I hugged you so tightly; it felt so comfortable. It was such a soul-soothing feeling that I can't even explain. 
-            </p>
+            <p>We cuddled so much... hum dono ek dusre ki baahon mein the 🫠🫶🏻💗. I hugged you so tightly; it felt so comfortable. It was such a soul-soothing feeling that I can't even explain.</p>
         </div>
     </section>
 
-    <section id="about">
-        <h2>About Her - My Perfect Girl</h2>
-        <div class="about-grid">
-            <div class="about-card">
-                <div class="icon">🤍💜</div>
-                <h3>Favorite Colors</h3>
-                <p><strong>White & Lavender</strong></p>
-                <p>Just as peaceful, calming, and elegant as you are to my soul.</p>
+    <section id="gallery">
+        <h2 style="font-size: 3rem; text-align: center;">Precious Moments</h2>
+        <div class="gallery-grid reveal">
+            <!-- Add your image links in the src below -->
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/rajveer99-rgv/birthday-website/master/images/IMG_20260503_112731.jpg" alt="Memory 1">
+                <div class="gallery-caption">Our First Meeting</div>
             </div>
-            <div class="about-card">
-                <div class="icon">🌷</div>
-                <h3>Favorite Flower</h3>
-                <p><strong>Tulip</strong></p>
-                <p>Graceful, rare, and absolutely stunning—just like my buggu.</p>
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/rajveer99-rgv/birthday-website/master/images/Snapchat-1618791039.jpg" alt="Memory 2">
+                <div class="gallery-caption">Park Adventures</div>
             </div>
-            <div class="about-card">
-                <div class="icon">🦢</div>
-                <h3>Favorite Bird</h3>
-                <p><strong>Swan</strong></p>
-                <p>A beautiful symbol of pure love and elegance, reflecting exactly who you are.</p>
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/rajveer99-rgv/birthday-website/master/images/Snapchat-1780260680.jpg" alt="Memory 3">
+                <div class="gallery-caption">Sunset Moments</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/rajveer99-rgv/birthday-website/master/images/Snapchat-439945114.jpg" alt="Memory 4">
+                <div class="gallery-caption">Lal Bagh Memories</div>
             </div>
         </div>
     </section>
 
     <section id="letter">
-        <h2>A Message From My Heart</h2>
-        <div class="message-box">
-            <p>
-                I adore you soooooo much, buggu. Even 5 hours feel like 5 minutes when I'm with you. I wish I had some superpower to stop time so that I could stay a little longer with you 🫠🥹💗. 
-            </p>
-            <p>
-                I wish main aapka neighbor hota, toh main roz aata aapke hathon ka khana khane 🫠🤌🏻💗. Your eyes, buggu... hayeee, main jab jab aapki aankhon mein dekhta hoon, main doob jata hoon unme, jaise ki koi gehra samundar ho 🫠🤌🏻💗.
-            </p>
-            <p>
-                You make my world so much brighter just by being in it. Every memory we make is a treasure I will keep forever. You are my dream come true, my perfect partner, and the love of my life.
-            </p>
-            <p style="text-align: right; margin-top: 2rem;">
-                <strong>Forever yours,</strong><br>
-                Veer ❤️
-            </p>
+        <h2 style="font-size: 3rem; text-align: center;">A Message From My Heart</h2>
+        <div class="glass-card reveal" style="border-left: 5px solid var(--dark-lavender);">
+            <p>I adore you soooooo much, buggu. Even 5 hours feel like 5 minutes when I'm with you. I wish I had some superpower to stop time so that I could stay a little longer with you 🫠🥹💗.</p>
+            
+            <p>I wish main aapka neighbor hota, toh main roz aata aapke hathon ka khana khane 🫠🤌🏻💗. Your eyes, buggu... hayeee, main jab jab aapki aankhon mein dekhta hoon, main doob jata hoon unme, jaise ki koi gehra samundar ho 🫠🤌🏻💗.</p>
+            
+            <p>You make my world so much brighter just by being in it. Every memory we make is a treasure I will keep forever. You are my dream come true, my perfect partner, and the love of my life.</p>
+            
+            <div style="text-align: right; margin-top: 30px; font-family: 'Dancing Script', cursive; font-size: 2rem;">
+                Forever yours,<br>Veer ❤️
+            </div>
         </div>
     </section>
 
     <footer>
         <p>Made with 💖 for the love of my life, Mishti</p>
-        <p>Happy International Girlfriend Day! ❤️</p>
+        <p>Swans 🦢 • Tulips 🌷 • White & Lavender 🤍💜</p>
     </footer>
 
+    <!-- JavaScript for Animations and Music -->
+    <script>
+        // Music Player Logic
+        let isPlaying = false;
+        const bgMusic = document.getElementById("bgMusic");
+        const musicBtn = document.getElementById("musicBtn");
+
+        function toggleMusic() {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicBtn.innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+                bgMusic.play();
+                musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Scroll Reveal Logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger on load
+    </script>
 </body>
 </html>
